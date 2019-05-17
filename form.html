@@ -6,31 +6,19 @@
         <title>form page</title>
     </head>
     <body>
-        <form>
+        <form novalidate>
             <h1>Payment Form</h1>
             <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
         <section>
             <h2>Contact information</h2>
-            <fieldset>
-                <legend>Title</legend>
-                <ul>
-                    <li>
-                        <label for="title_1">
-                            <input type="radio" id="title_1" name="title" value="Mr. ">
-                            Mister
-                        </label>
-                    </li>
-                    <li>
-                        <label for="title_2">
-                            <input type="radio" id="title_2" name="title" value="Ms. ">
-                            Miss
-                        </label>
-                    </li>
-                </ul>
-            </fieldset>
+                <fieldset>
+                    <legend>Title<abbr title="This field is mandatory">*</abbr></legend>
+                    <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
+                    <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
+                </fieldset>
             <p>
                 <label for="name">
-                    <span>Name: </span>
+                    <span>Name:</span>
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
                 <input type="text" id="name" name="username">
@@ -38,13 +26,13 @@
             <p>
                 <label for="mail">
                     <span>E-mail:</span>
-                    <strong><abbr title="required">*</abbr></strong>
+                    <input type="email" id="mail" name="mail">
+                    <span class="error" aria-live="polite"> </span>
                 </label>
-                <input type="email" id="mail" name="usermail">
             </p>
             <p>
                 <label for="pwd">
-                    <span>Password: </span>
+                    <span>Password:</span>
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
                 <input type="password" id="pwd" name="password">
@@ -79,4 +67,5 @@
         <p><button type="submit">Validate the payment</button></p>
         </form>
     </body>
+    <script src="validation.js"></script>
 </html>
